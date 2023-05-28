@@ -1,0 +1,147 @@
+body {
+    background-color: black;
+    color:white;
+    font-family: Segoe UI;
+    margin: 0;
+}
+
+#p {
+    cursor: default;
+    transition: all 0.5s;
+}
+
+#logo-windows {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.window {
+    padding: 1px; width: 500px; height: 500px; display: block;
+    position:absolute; background-color: #ffffff;
+    transition: width 0.5s cubic-bezier(1, -0.44, 0, 2.59) 0s, height 0.5s cubic-bezier(1, -0.44, 0, 2.59) 0s, opacity 0.3s ease-out 0s ;
+}
+.window_btn {
+    background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);
+    padding:10px; border: 0;
+}
+.window_btn:hover { background-color: rgb(189, 189, 189); }
+.window_btnRed {
+    background-color: red; color: white;
+    padding:10px; border: 0;
+}
+.window_btnRed:hover { background-color: rgb(160, 0, 0); }
+
+.metro_btn {
+    background-color: rgb(245, 245, 245); color: rgb(0, 0, 0);
+    padding:5px; border: 0; border: #000000 1px solid; border-radius: 3px; width:100px;
+    transition: all 0.2s ease-in-out 0s;
+}
+.metro_btn:hover { background-color: rgb(231, 231, 231); }
+.metro_btn:active { background-color: rgb(211, 211, 211); }
+
+.btn_black {
+    background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);
+    padding:15px; border: 0;
+}
+.btn_black:hover { background-color: rgb(31, 31, 31); }
+.btn_black:active { background-color: rgb(22, 22, 22); }
+
+.align {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.loader .circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transform: rotate(225deg);
+    animation-iteration-count: infinite;
+    animation-name: orbit;
+    animation-duration: 5.5s;
+}
+.loader .circle:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 9px rgba(255, 255, 255, .7);
+}
+.loader .circle:nth-child(2) {
+    animation-delay: 240ms;
+}
+.loader .circle:nth-child(3) {
+    animation-delay: 480ms;
+}
+.loader .circle:nth-child(4) {
+    animation-delay: 720ms;
+}
+.loader .circle:nth-child(5) {
+    animation-delay: 960ms;
+}
+.loader .bg {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-left: -16px;
+    margin-top: -16px;
+    border-radius: 13px;
+    /*background-color: rgba(0, 153, 255, 0.69);*/
+    animation: bgg 16087ms ease-in alternate infinite;
+}
+@keyframes orbit {
+    0% {
+        transform: rotate(225deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    7% {
+        transform: rotate(345deg);
+        animation-timing-function: linear;
+    }
+    30% {
+        transform: rotate(455deg);
+        animation-timing-function: ease-in-out;
+    }
+    39% {
+        transform: rotate(690deg);
+        animation-timing-function: linear;
+    }
+    70% {
+        transform: rotate(815deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    75% {
+        transform: rotate(945deg);
+        animation-timing-function: ease-out;
+    }
+    76% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+}
