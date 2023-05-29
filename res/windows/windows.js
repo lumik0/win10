@@ -28,7 +28,7 @@ const UpdateT = function() {
 
     for(let i = 0; i < proccess.length; i++) {
         x_pr+=46;
-        $('#proccess').append('<img id="ico_'+i+'" src="/images/search.png" width="48" style="position: fixed; left: '+x_pr+'px; bottom: -1px">');
+        $('#proccess').append('<img id="ico_'+i+'" src="/res/images/search.png" width="48" style="position: fixed; left: '+x_pr+'px; bottom: -1px">');
     }
 }
 
