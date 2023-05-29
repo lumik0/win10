@@ -8,6 +8,11 @@
         <script src="/res/sys/fs.js"></script> 
     </head>
     <body style="background-image: url(/res/images/obou.jpg); background-repeat: no-repeat; background-size: cover; user-select: all;">
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+        </script>
+        
         <!--<img id="wall" src="/images/obou.jpg" width="1920" height="937" style="position: fixed;">-->
         <img id="start" onmousedown="return false" src="/res/images/start.png" width="48" style="position: fixed; bottom: -1px">
         <img id="search" onmousedown="return false" src="/res/images/search.png" width="48" style="position: fixed; left: 48px; bottom: -1px">
