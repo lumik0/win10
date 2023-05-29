@@ -246,7 +246,7 @@ const UpdateDesktop = function() {
 
     fs_getFilesInDir('/res/desktop', (v) => {
         for(let i = 0; i < v.length; i++) {
-            $('#desktop').append(`<button onclick="fs_open('C/System/Desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
+            $('#desktop').append(`<button onclick="fs_openfile('C/System/Desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
         }
     });
 }
