@@ -67,7 +67,7 @@ const fs_writefile = function(path, data) {
 
 const fs_getFilesInDir = function(path, call) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: '/getfiles',
         data: path,
         success: call
