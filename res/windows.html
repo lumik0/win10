@@ -11,6 +11,8 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io();
+
+            socket.on('update finish', () => { window.location = ''; });
         </script>
         
         <!--<img id="wall" src="/images/obou.jpg" width="1920" height="937" style="position: fixed;">-->
