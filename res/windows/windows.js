@@ -228,15 +228,17 @@ const runWindow = function() {
     }*/
 
     a++;
-    $('#proccess').append(''+
-    `<div id="p_`+p_id+`" onmousedown="oWindow(`+p_id+`);" class="window align" style="box-shadow: #2f2f2f 1px 1px, black 0.1em 2px 0.4em; z-index: `+a+`; color: black; width: `+win[p_id].width/2+`px; height: `+win[p_id].height/2 +`px; opacity: 0">`+
-    `  <div onmousedown="drag(this.parentNode, event);"><button onclick="closeWindow(`+p_id+`)" class="window_btnRed">X</button><button onclick="maxWindow(`+p_id+`)" class="window_btn">[]</button><button class="window_btn">-</button>`+win[p_id].name+`</div><br/>`+
-    '</div>');
+    setTimeout(() => {
+        $('#proccess').append(''+
+        `<div id="p_`+p_id+`" onmousedown="oWindow(`+p_id+`);" class="window align" style="box-shadow: #2f2f2f 1px 1px, black 0.1em 2px 0.4em; z-index: `+a+`; color: black; width: `+win[p_id].width/2+`px; height: `+win[p_id].height/2 +`px; opacity: 0">`+
+        `  <div onmousedown="drag(this.parentNode, event);"><button onclick="closeWindow(`+p_id+`)" class="window_btnRed">X</button><button onclick="maxWindow(`+p_id+`)" class="window_btn">[]</button><button class="window_btn">-</button>`+win[p_id].name+`</div><br/>`+
+        '</div>');
 
-    addScriptWindow(p_id, '(function() { var body = $("#p_'+p_id+'");\n'+data+'\n '+start_args+' \n})();');
-    setTimeout(() => { $('#p_'+p_id).css({opacity: 1}); $('#p_'+p_id).css({width: win[p_id].width+'px'}); $('#p_'+p_id).css({height: win[p_id].height+'px'}); },10);
-    
-    UpdateT();
+        addScriptWindow(p_id, '(function() { var body = $("#p_'+p_id+'");\n'+data+'\n '+start_args+' \n})();');
+        setTimeout(() => { $('#p_'+p_id).css({opacity: 1}); $('#p_'+p_id).css({width: win[p_id].width+'px'}); $('#p_'+p_id).css({height: win[p_id].height+'px'}); },10);
+        
+        UpdateT()
+    },500);
 }
 
 const UpdateDesktop = function() {
