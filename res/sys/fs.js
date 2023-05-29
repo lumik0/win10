@@ -70,7 +70,7 @@ const fs_openfile = function(path) {
 
     fs_readfile(path, (data) => {
         
-        try {
+        //try {
             let ex = f_ex.exec(path)[1]
             if(ex === 'js') {
                 runWindow(path);
@@ -80,7 +80,7 @@ const fs_openfile = function(path) {
                 return true;
             }
             return false
-        } catch { window.location = '/res/bsod.html'; }
+        //} catch { window.location = '/res/bsod.html'; }
 
     });
 }
