@@ -238,7 +238,7 @@ const runWindow = function() {
         setTimeout(() => { $('#p_'+p_id).css({opacity: 1}); $('#p_'+p_id).css({width: win[p_id].width+'px'}); $('#p_'+p_id).css({height: win[p_id].height+'px'}); },10);
         
         UpdateT()
-    },500);
+    },250);
 }
 
 const UpdateDesktop = function() {
@@ -246,7 +246,7 @@ const UpdateDesktop = function() {
 
     fs_getFilesInDir('/res/desktop', (v) => {
         for(let i = 0; i < v.length; i++) {
-            $('#desktop').append(`<button onclick="fs_openfile('C/System/Desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
+            $('#desktop').append(`<button onclick="fs_openfile('/res/desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
         }
     });
 }
