@@ -6,7 +6,7 @@ body.append(
     '     <td width="20%">'+
     `         <button id="home" style="width:100%; padding:5px">Home</button>`+
     `         <button id="main" style="width:100%; padding:5px">Main</button>`+
-    `         <button id="main" style="width:100%; padding:5px">Update</button>`+
+    `         <button id="update" style="width:100%; padding:5px">Update</button>`+
     '     </td>'+
     '     <td valign="top" width="80%" id="content">'+
     '         This is home'+

@@ -1,4 +1,5 @@
 [
+    ["https://raw.githubusercontent.com/lumik0/win10/main/res/update.txt", "res/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/ins.json", "res/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/reg.json", "res/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/index.html", "res/"],
