@@ -73,7 +73,6 @@ const fs_getFilesInDir = function(path, call) {
         url: '/getfiles?path='+path,
         success: call
     });
-    //$.post( '/getfiles?path='+path, call);
 }
 
 //const fs_exists = function(path) {
