@@ -26,7 +26,7 @@
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/finder/main.js", "res/apps/finder/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/notepad/main.js", "res/apps/notepad/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/settings/main.js", "res/apps/settings/"],
-    ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/winver/main.js", "res/apps/winver/"],
+    ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/winver/winver.js", "res/apps/winver/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/winver/lol.js", "res/apps/winver/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/confirm.js", "res/apps/"],
     ["https://raw.githubusercontent.com/lumik0/win10/main/res/apps/error.js", "res/apps/"],
