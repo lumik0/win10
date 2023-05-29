@@ -8,25 +8,16 @@ const addScriptWindow = function(p, v) {
 }
 
 const script_require = function(v) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/res/apps/'+v, false);
-    xhr.send();
-    if (xhr.status != 200) {
-        return(false);
-    } else {
-        addScriptWindow(p_id, xhr.responseText );
-    }
+    fs_readfile('/res/apps/'+v, (data) => {
+        addScriptWindow(p_id, data);
+    });
 }
 
 const require = function(v) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/res/apps/'+v, false);
-    xhr.send();
-    if (xhr.status != 200) {
-        return(false);
-    } else {
-        return xhr.responseText;
-    }
+    let d = undefined;
+    fs_readfile('/res/apps/'+v, (data) => {
+        d = data;
+    }); return d;
 }
 
 const UpdateT = function() {
@@ -207,7 +198,7 @@ const runWindow = function() {
             for(let k = 0; k < start_args.length-1; k++) new_s+=start_args[k];
             start_args = new_s;
         } catch(e) {
-            runWindow('C/System/Apps/error.exe', ["Error", e]);
+            runWindow('/res/apps/error.js', ["Error", e]);
             return;
         }
     }
@@ -218,19 +209,20 @@ const runWindow = function() {
 
     let data = '';
     try {
-        data = fs_get_path(path);
-        data = data.replaceAll('var','let');
-        data = data.replace('win','win['+p_id+']');
-        eval(data.split('\n')[0]);
+        fs_readfile(path, (d) => {
+            data = d.toString().replaceAll('var','let');
+            data = data.replace('win','win['+p_id+']');
+            eval(data.split('\n')[0]);
 
-        if(win[p_id].ore === true) {
-            if(proccess.filter(e => e.p === path).length === 2) {
-                closeWindow(p_id); return;
+            if(win[p_id].ore === true) {
+                if(proccess.filter(e => e.p === path).length === 2) {
+                    closeWindow(p_id); return;
+                }
             }
-        }
+        });
     } catch(e) {
         closeWindow(p_id);
-        runWindow('C/System/Apps/error.exe', ["Error", e]);
+        runWindow('/res/apps/error.js', ["Error", e]);
         return;
     }
 
@@ -249,10 +241,11 @@ const runWindow = function() {
 const UpdateDesktop = function() {
     $('#desktop').html('');
 
-    let v = fs_get_path('C/System/Desktop');
-    for(let file in v) {
-        $('#desktop').append(`<button onclick="fs_open('C/System/Desktop/`+file+`')" style="height:75px; width: 75px">` +file+`</button> `);
-    }
+    fs_readfile('/res/desktop', (v) => {
+        for(let file in v) {
+            $('#desktop').append(`<button onclick="fs_open('C/System/Desktop/`+file+`')" style="height:75px; width: 75px">` +file+`</button> `);
+        }
+    });
 }
 
 UpdateDesktop();

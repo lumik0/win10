@@ -65,13 +65,36 @@ const fs_writefile = function(path, data) {
     return true;
 }
 
+let f_ex = /(?:\.([^.]+))?$/;
+const fs_openfile = function(path) {
+
+    fs_readfile(path, (data) => {
+        
+        try {
+            let ex = f_ex.exec(path)[1]
+            if(ex === 'js') {
+                runWindow(path);
+                return true;
+            } else if(ex === 'link') {
+                runWindow(data);
+                return true;
+            }
+            return false
+        } catch { window.location = '/res/bsod.html'; }
+
+    });
+}
+
 const fs_getFilesInDir = function(path, call) {
     path = path.replaceAll('/','-');
 
     $.ajax({
         type: "GET",
         url: '/getfiles?path='+path,
-        success: call
+        success: function(data) {
+            data = JSON.parse(data);
+            call(data);
+        }
     });
 }
 
