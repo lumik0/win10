@@ -241,9 +241,9 @@ const runWindow = function() {
 const UpdateDesktop = function() {
     $('#desktop').html('');
 
-    fs_readfile('/res/desktop', (v) => {
-        for(let file in v) {
-            $('#desktop').append(`<button onclick="fs_open('C/System/Desktop/`+file+`')" style="height:75px; width: 75px">` +file+`</button> `);
+    fs_getFilesInDir('/res/desktop', (v) => {
+        for(let i = 0; i < v.length; i++) {
+            $('#desktop').append(`<button onclick="fs_open('C/System/Desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
         }
     });
 }
