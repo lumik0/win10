@@ -1,4 +1,4 @@
-const fs_require = function(v) {
+/*const fs_require = function(v) {
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET', v, false);
@@ -49,13 +49,27 @@ const fs_open = function(path) {
         }
         return false
     } catch { window.location = '/res/bsod.html'; }
+}*/
+
+const fs_readfile = function(path, call) {
+    $.get( path, call);
+    return true;
+}
+
+const fs_writefile = function(path, data) {
+    socket.emit('write file', path, data);
+    return true;
+}
+
+const fs_getFilesInDir = function(path, call) {
+    $.get( '/getfiles?path='+path, call);
 }
 
 //const fs_exists = function(path) {
 //    path = fs_get_path(path);
 //}
 
-let fs = {
+/*let fs = {
     C: {
         name: "Браузерный диск",
         data: {
@@ -97,4 +111,4 @@ let fs = {
             }
         }
     }
-}
+}*/
