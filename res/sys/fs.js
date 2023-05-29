@@ -52,7 +52,11 @@ const fs_open = function(path) {
 }*/
 
 const fs_readfile = function(path, call) {
-    $.get( path, call);
+    $.ajax({
+        type: "GET",
+        url: path,
+        success: call
+    });
     return true;
 }
 
@@ -62,7 +66,13 @@ const fs_writefile = function(path, data) {
 }
 
 const fs_getFilesInDir = function(path, call) {
-    $.get( '/getfiles?path='+path, call);
+    $.ajax({
+        type: "POST",
+        url: '/getfiles',
+        data: path,
+        success: call
+    });
+    //$.post( '/getfiles?path='+path, call);
 }
 
 //const fs_exists = function(path) {
