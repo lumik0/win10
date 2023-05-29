@@ -66,10 +66,11 @@ const fs_writefile = function(path, data) {
 }
 
 const fs_getFilesInDir = function(path, call) {
+    path = path.replaceAll('/','-');
+
     $.ajax({
         type: "GET",
-        url: '/getfiles',
-        data: path,
+        url: '/getfiles?path='+path,
         success: call
     });
     //$.post( '/getfiles?path='+path, call);
