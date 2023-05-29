@@ -208,10 +208,11 @@ const runWindow = function() {
     proccess.push({p: path, id: p_id});
 
     let data = '';
-    try {
+    //try {
         fs_readfile(path, (d) => {
             data = d.toString().replaceAll('var','let');
             data = data.replace('win','win['+p_id+']');
+            console.log(data.split('\n')[0]);
             eval(data.split('\n')[0]);
 
             if(win[p_id].ore === true) {
@@ -220,11 +221,11 @@ const runWindow = function() {
                 }
             }
         });
-    } catch(e) {
+    /*} catch(e) {
         closeWindow(p_id);
         runWindow('/res/apps/error.js', ["Error", e]);
         return;
-    }
+    }*/
 
     a++;
     $('#proccess').append(''+
