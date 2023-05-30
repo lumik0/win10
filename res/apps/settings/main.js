@@ -52,7 +52,7 @@ $('#update').on("click", () => {
     $('#content').html(
         ''+
         ''+
-        '<span id="version">Version: ???</span>'+
+        '<span id="version">Version: ???</span><br/>'+
         `<button class="metro_btn" onclick="$.ajax({ type: 'GET', url: 'https://raw.githubusercontent.com/lumik0/win10/main/res/update.txt', success: function(data) { fs_readfile('/res/update.txt', (d) => { if(data === d) alert('Это последнее обновление'); else socket.emit('update'); }) } })">Update</button>`+
         ''+
         ''+
