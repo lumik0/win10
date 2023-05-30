@@ -36,17 +36,19 @@ function update() {
     if(what === 'desktop') {
         $('#file').html('');
 
-        var v = fs_get_path('C/System/Desktop');
-        for(let file in v) {
-            $('#file').append(`<button onclick="fs_open('C/System/Desktop/`+file+`')" style="height:75px; width: 75px">` +file+`</button> `);
-        }
+        fs_getFilesInDir('/res/desktop', (v) => {
+            for(let i = 0; i < v.length; i++) {
+                $('#file').append(`<button onclick="fs_openfile('/res/desktop/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
+            }
+        });
     }
     if(what === 'apps') {
         $('#file').html('');
 
-        var v = fs_get_path('C/System/Apps');
-        for(let app in v) {
-            $('#file').append(`<button onclick="fs_open('C/System/Apps/`+app+`')" style="height:75px; width: 75px">` +app+`</button> `);
-        }
+        fs_getFilesInDir('/res/apps', (v) => {
+            for(let i = 0; i < v.length; i++) {
+                $('#file').append(`<button onclick="fs_openfile('/res/apps/`+v[i]+`')" style="height:75px; width: 75px">` +v[i]+`</button> `);
+            }
+        });
     }
 }
