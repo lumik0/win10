@@ -1,2 +1,1 @@
-Beta 1.3.2
--Bug fixed in Settings
+Beta 1.3.3
