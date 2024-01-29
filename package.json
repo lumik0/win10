@@ -1,0 +1,21 @@
+{
+  "name": "win10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.6.1"
+  }
+}
