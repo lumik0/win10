@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Windows 10</title>
+        <script src="/lib/jquery-3.6.4.min.js"></script>
+        <script src="/res/main.js"></script>
+        <link rel="stylesheet" href="/res/main.css">
+        <link rel="stylesheet" href="/res/dropwon.css">
+        <link rel="stylesheet" href="/lib/jdmenubar.css" />
+        <script src="/lib/jdmenubar.js"></script>
+        <script src="/res/sys/fs.js"></script> 
+    </head>
+    <body style="background-image: url(/res/images/obou.jpg); background-repeat: revert; background-position: center; background-size: initial; background-origin: content-box; background-attachment: fixed; background-size: cover; user-select: all;">
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            if (window.parent.frames.length > 0) {
+                window.location = '/res/bsod.html';
+            }
+
+            socket.on('update finish', () => { window.location = '/'; });
+        </script>
+        
+        <!--<div id="panel">
+            <img id="start" onmousedown="return false" src="/res/images/start.png" width="48" style="position: fixed; bottom: -1px">
+            <img id="search" onmousedown="return false" src="/res/images/search.png" width="48" style="position: fixed; left: 48px; bottom: -1px">
+            <img id="a" onmousedown="return false" src="/res/images/a.png" width="1570" style="position: fixed; left: 96px; bottom: -98px">
+            <img id="a" onmousedown="return false" src="/res/images/wea.png" width="264" style="position: fixed; left: 1656px; bottom: 0">
+            <div id="menu-start" onmousedown="return false" style="width: 500px; height: 500px; position: fixed; bottom: 40px; background: black; bottom:-100%; transition: bottom 0.1s cubic-bezier(1, -0.05, 0, 0.99) 0s;">
+                <div style="bottom:1px; position: absolute;">
+                    <button class="btn_black" style="width: 100px;" onclick="fs_openfile('/res/apps/finder/main.js'); closeMenuStart();">Finder</button><br/>
+                    <button class="btn_black" style="width: 100px;" onclick="fs_openfile('/res/apps/settings/main.js'); closeMenuStart();">Settings</button><br/>
+                    <button class="btn_black" style="width: 100px;" onclick="window.location = '/';">Restart</button>
+                </div>
+            </div>
+        </div>-->
+        
+
+        <div id="proccess" style="user-select: none">
+
+        </div>
+
+        <script src="/res/sys/app_engine.js"></script>
+        <script src="/res/windows/buttons.js"></script>
+        <script src="/res/windows/windows.js"></script>
+
+        <script>
+            fs_openfile('/res/apps/sys/explorer.js');
+        </script>
+    </body>
+</html>

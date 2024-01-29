@@ -1,0 +1,277 @@
+body {
+    background-color: black;
+    color:white;
+    font-family: Segoe UI;
+    margin: 0;
+}
+
+#p {
+    cursor: default;
+    transition: all 0.5s;
+}
+
+:root {
+    --jdmenu-bg-color: rgb(0,250,250);
+    --jdmenu-border-color: rgb(0,200,200);
+    --jdmenu-focus-color: rgb(0,235,235);
+    --jdmenu-shortcut-color:rgb(0,100,100); /* Also for disabled items */
+    --jdmenu-font-size: 25px;
+    --jdmenu-font-family: "Comic Sans MS", "Comic Sans", cursive;
+    --jdmenu-font-color: rgb(0,0,0);
+}
+
+/* */
+
+.button:disabled, .button:disabled:hover, .button:disabled:active, 
+input[type=button]:disabled, input[type=button]:disabled:hover, input[type=button]:disabled:active{
+  background-color: rgb(204,204,204);
+  /*197,197,197*/
+  -webkit-box-shadow: 0px 0px 0px 1px rgb(204,204,204),
+                      0px 0px 0px 2px rgb(173,173,173);
+  box-shadow: 0px 0px 0px 1px rgb(204,204,204),
+              0px 0px 0px 2px rgb(173,173,173);
+  color: rgb(135,135,135);
+}
+
+.button, input[type=button]{
+  outline: none;
+  -webkit-transition: background-color .5s, -webkit-box-shadow .5s;
+  transition: background-color .5s, -webkit-box-shadow .5s;
+  -o-transition: box-shadow .5s, background-color .5s;
+  transition: box-shadow .5s, background-color .5s;
+  transition: box-shadow .5s, background-color .5s, -webkit-box-shadow .5s;
+  font-family: sans-serif;
+  font-size: 13px;
+  background-color: rgb(225,225,225);
+  padding: 0 25px;
+  margin: 2px;
+  border: 0;
+  -webkit-box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+                      0px 0px 0px 2px rgb(173,173,173);
+  box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+              0px 0px 0px 2px rgb(173,173,173);
+  border: 1px dotted transparent;
+  color: black;
+}
+
+.button:focus, input[type=button]:focus{
+  
+  background-color: rgb(225,225,225);
+  -webkit-box-shadow: 0px 0px 0px 0px rgb(225,225,225),
+                      0px 0px 0px 2px rgb(0,120,215);
+  box-shadow: 0px 0px 0px 0px rgb(225,225,225),
+              0px 0px 0px 2px rgb(0,120,215);
+  border: 1px dotted rgb(17,17,17);
+}
+
+.button:hover, input[type=button]:hover{
+  -webkit-box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+                      0px 0px 0px 2px rgb(0,120,215);
+  box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+              0px 0px 0px 2px rgb(0,120,215);
+  background-color: rgb(229,241,251);
+}
+.button:active, input[type=button]:active{
+  -webkit-transition: background-color 0s;
+  -o-transition: background-color 0s;
+  transition: background-color 0s;
+  background-color: rgb(204,228,247);
+  -webkit-box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+                      0px 0px 0px 2px rgb(0,120,215);
+  box-shadow: 0px 0px 0px 1px rgb(225,225,225),
+              0px 0px 0px 2px rgb(0,120,215);
+}
+
+/* */
+
+#logo-windows {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+
+
+
+.window {
+    padding: 1px; width: 500px; height: 500px; display: block;
+    position:absolute; background-color: #ffffff;
+    transition: opacity 0.3s ease-out 0s ; color:rgb(0, 0, 0);
+    resize: both; overflow: auto;
+}
+.window_dark {
+    background-color: black;
+    color: white
+}
+.window_dark .window_btn {
+    background-color: black;
+    color: white
+}
+.window_dark .window_btnRed {
+    background-color: black;
+    color: white
+}
+.window_dark .window_btnRed:enabled:hover {
+    background-color: rgb(202, 1, 1); color:white
+}
+.window_dark .window_btnRed:enabled:active {
+    background-color: rgb(163, 0, 0); color:white
+}
+.window_dark .window_btnRed:disabled {
+    background-color: rgb(0, 0, 0); color:rgb(214 214 214)
+}
+.window_dark .window_btn:enabled:hover {
+    background-color: rgb(48, 48, 48);
+    color: white
+}
+.window_dark .window_btn:enabled:active {
+    background-color: rgb(61, 61, 61);
+    color: white
+}
+.window_dark .window_btn:disabled {
+    background-color: rgb(0, 0, 0);
+    color:rgb(214 214 214)
+}
+
+.window_btn {
+    background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);
+    padding:5px 15px; border: 0;
+}
+.window_btn:disabled { background-color: rgb(255, 255, 255); color:rgb(214 214 214) }
+.window_btn:enabled:hover { background-color: rgb(189, 189, 189); }
+.window_btn:enabled:active { background-color: rgb(156, 156, 156); }
+
+.window_btnRed {
+    background-color: rgb(255, 255, 255); color: black;
+    padding:5px 15px; border: 0;
+}
+.window_btnRed:disabled { background-color: rgb(255, 255, 255); color:rgb(214 214 214) }
+.window_btnRed:enabled:hover { background-color: rgb(202, 1, 1); color:white }
+.window_btnRed:enabled:active { background-color: rgb(163, 0, 0); color:white }
+
+
+
+.metro_btn {
+    background-color: rgb(245, 245, 245); color: rgb(0, 0, 0);
+    padding:5px; border: 0; border: #000000 1px solid; border-radius: 3px; width:100px;
+    transition: all 0.2s ease-in-out 0s;
+}
+.metro_btn:hover { background-color: rgb(231, 231, 231); }
+.metro_btn:active { background-color: rgb(211, 211, 211); }
+
+.btn_black {
+    background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);
+    padding:15px; border: 0;
+}
+.btn_black:hover { background-color: rgb(31, 31, 31); }
+.btn_black:active { background-color: rgb(22, 22, 22); }
+
+.align {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.alignX {
+    position: fixed;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+}
+.alignY {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.loader {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.loader .circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transform: rotate(225deg);
+    animation-iteration-count: infinite;
+    animation-name: orbit;
+    animation-duration: 5.5s;
+}
+.loader .circle:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 9px rgba(255, 255, 255, .7);
+}
+.loader .circle:nth-child(2) {
+    animation-delay: 240ms;
+}
+.loader .circle:nth-child(3) {
+    animation-delay: 480ms;
+}
+.loader .circle:nth-child(4) {
+    animation-delay: 720ms;
+}
+.loader .circle:nth-child(5) {
+    animation-delay: 960ms;
+}
+.loader .bg {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-left: -16px;
+    margin-top: -16px;
+    border-radius: 13px;
+    /*background-color: rgba(0, 153, 255, 0.69);*/
+    animation: bgg 16087ms ease-in alternate infinite;
+}
+@keyframes orbit {
+    0% {
+        transform: rotate(225deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    7% {
+        transform: rotate(345deg);
+        animation-timing-function: linear;
+    }
+    30% {
+        transform: rotate(455deg);
+        animation-timing-function: ease-in-out;
+    }
+    39% {
+        transform: rotate(690deg);
+        animation-timing-function: linear;
+    }
+    70% {
+        transform: rotate(815deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    75% {
+        transform: rotate(945deg);
+        animation-timing-function: ease-out;
+    }
+    76% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+}
